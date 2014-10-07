@@ -1,5 +1,8 @@
 def english_number(n):
-    return 'zero'
+    if n:
+        return 'one'
+    else:
+        return 'zero'
 
 
 if __name__ == '__main__':
