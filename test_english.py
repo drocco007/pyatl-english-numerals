@@ -23,3 +23,19 @@ def test_one():
 )
 def test_ones(n, english):
     assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(10, 'ten'),
+     (11, 'eleven'),
+     (12, 'twelve'),
+     (13, 'thirteen'),
+     (14, 'fourteen'),
+     (15, 'fifteen'),
+     (16, 'sixteen'),
+     (17, 'seventeen'),
+     (18, 'eighteen'),
+     (19, 'nineteen')]
+)
+def test_tens(n, english):
+    assert english == english_number(n)
