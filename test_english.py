@@ -39,3 +39,15 @@ def test_ones(n, english):
 )
 def test_tens(n, english):
     assert english == english_number(n)
+
+
+def test_twenty():
+    assert 'twenty' == english_number(20)
+
+
+def test_twenty_one():
+    assert 'twenty-one' == english_number(21)
+
+
+def test_twenty_two():
+    assert 'twenty-two' == english_number(22)
