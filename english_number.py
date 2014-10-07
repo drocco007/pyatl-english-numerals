@@ -1,7 +1,9 @@
-ones_tens = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
-             'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen',
-             'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen',
-             'nineteen',]
+tens = ['zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty',
+        'seventy', 'eighty', 'ninety']
+ones_teens = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+              'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen',
+              'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen',
+              'nineteen',]
 
 
 def english_number(n):
@@ -9,14 +11,15 @@ def english_number(n):
     result = []
 
     if n >= 20:
-        result.append('twenty')
+        place = n / 10
         anything_left = n = n % 10
+        result.append(tens[place])
 
         if anything_left:
             result.append('-')
 
     if anything_left:
-        result.append(ones_tens[n])
+        result.append(ones_teens[n])
 
     return ''.join(result)
 

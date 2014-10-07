@@ -54,8 +54,7 @@ def test_twenty_two():
 
 
 @pytest.mark.parametrize('n, english',
-    [(22, 'twenty-two'),
-     (23, 'twenty-three'),
+    [(23, 'twenty-three'),
      (24, 'twenty-four'),
      (25, 'twenty-five'),
      (26, 'twenty-six'),
@@ -64,4 +63,36 @@ def test_twenty_two():
      (29, 'twenty-nine')]
 )
 def test_twenties(n, english):
+    assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(30, 'thirty'),
+     (31, 'thirty-one'),
+     (32, 'thirty-two'),
+     (33, 'thirty-three'),
+     (34, 'thirty-four'),
+     (35, 'thirty-five'),
+     (36, 'thirty-six'),
+     (37, 'thirty-seven'),
+     (38, 'thirty-eight'),
+     (39, 'thirty-nine')]
+)
+def test_thirties(n, english):
+    assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(99, 'ninety-nine'),
+     (93, 'ninety-three'),
+     (90, 'ninety'),
+     (82, 'eighty-two'),
+     (78, 'seventy-eight'),
+     (75, 'seventy-five'),
+     (70, 'seventy'),
+     (65, 'sixty-five'),
+     (56, 'fifty-six'),
+     (47, 'forty-seven'),]
+)
+def test_double_digit(n, english):
     assert english == english_number(n)
