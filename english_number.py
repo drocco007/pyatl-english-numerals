@@ -1,8 +1,9 @@
+ones = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+        'nine']
+
+
 def english_number(n):
-    if n:
-        return 'one'
-    else:
-        return 'zero'
+    return ones[n]
 
 
 if __name__ == '__main__':
