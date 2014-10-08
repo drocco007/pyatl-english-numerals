@@ -10,6 +10,9 @@ def english_number(n):
     anything_left = True
     result = []
 
+    if n >= 100:
+        return 'one hundred'
+
     if n >= 20:
         place = n / 10
         anything_left = n = n % 10

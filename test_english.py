@@ -96,3 +96,7 @@ def test_thirties(n, english):
 )
 def test_double_digit(n, english):
     assert english == english_number(n)
+
+
+def test_one_hundred():
+    assert 'one hundred' == english_number(100)
