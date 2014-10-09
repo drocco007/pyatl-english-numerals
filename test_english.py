@@ -209,3 +209,51 @@ def test_one_thousand():
 
 def test_one_thousand_one():
     assert 'one thousand one' == english_number(1001)
+
+
+@pytest.mark.parametrize('n, english',
+    [(1002, 'one thousand two'),
+     (1003, 'one thousand three'),
+     (1004, 'one thousand four'),
+     (1005, 'one thousand five'),
+     (1006, 'one thousand six'),
+     (1007, 'one thousand seven'),
+     (1008, 'one thousand eight'),
+     (1009, 'one thousand nine'),
+     (1010, 'one thousand ten'),
+     (1011, 'one thousand eleven'),
+     (1012, 'one thousand twelve'),
+     (1013, 'one thousand thirteen'),
+     (1014, 'one thousand fourteen'),
+     (1015, 'one thousand fifteen'),
+     (1016, 'one thousand sixteen'),
+     (1017, 'one thousand seventeen'),
+     (1018, 'one thousand eighteen'),
+     (1019, 'one thousand nineteen')]
+)
+def test_one_thousand_ones(n, english):
+    assert english == english_number(n)
+
+
+def test_party_like_its():
+    assert 'one thousand nine hundred ninety-nine' == english_number(1999)
+
+
+def test_sobering_social_commentary():
+    assert 'one thousand nine hundred eighty-four' == english_number(1984)
+
+
+def test_inception_of_dan():
+    assert 'one thousand nine hundred seventy-eight' == english_number(1978)
+
+
+def test_war_of():
+    assert 'one thousand eight hundred twelve' == english_number(1812)
+
+
+def test_spirit_of():
+    assert 'one thousand seven hundred seventy-six' == english_number(1776)
+
+
+def test_happy_birthday_Bach():
+    assert 'one thousand six hundred eighty-five' == english_number(1685)
