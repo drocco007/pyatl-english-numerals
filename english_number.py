@@ -11,8 +11,10 @@ def english_number(n):
     result = []
 
     if n >= 1000:
+        thousands = n / 1000
         anything_left = n = n % 1000
-        result.append('one thousand')
+        result.append(english_number(thousands))
+        result.append(' thousand')
 
         if anything_left:
             result.append(' ')

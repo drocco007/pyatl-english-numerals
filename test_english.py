@@ -257,3 +257,26 @@ def test_spirit_of():
 
 def test_happy_birthday_Bach():
     assert 'one thousand six hundred eighty-five' == english_number(1685)
+
+
+def test_two_thousand():
+    assert 'two thousand' == english_number(2000)
+
+
+def test_two_thousand_one():
+    assert 'two thousand one' == english_number(2001)
+
+
+@pytest.mark.parametrize('n, english',
+    [(99999, 'ninety-nine thousand nine hundred ninety-nine'),
+     (80000, 'eighty thousand'),
+     (65536, 'sixty-five thousand five hundred thirty-six'),
+     (32768, 'thirty-two thousand seven hundred sixty-eight'),
+     (16384, 'sixteen thousand three hundred eighty-four'),
+     (8192, 'eight thousand one hundred ninety-two'),
+     (4096, 'four thousand ninety-six'),
+     (2048, 'two thousand forty-eight'),
+     (1024, 'one thousand twenty-four'),]
+)
+def test_other_thousands(n, english):
+    assert english == english_number(n)
