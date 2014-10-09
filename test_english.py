@@ -267,6 +267,10 @@ def test_two_thousand_one():
     assert 'two thousand one' == english_number(2001)
 
 
+def test_ten_thousand():
+    assert 'ten thousand' == english_number(10000)
+
+
 @pytest.mark.parametrize('n, english',
     [(99999, 'ninety-nine thousand nine hundred ninety-nine'),
      (80000, 'eighty thousand'),
@@ -279,4 +283,22 @@ def test_two_thousand_one():
      (1024, 'one thousand twenty-four'),]
 )
 def test_other_thousands(n, english):
+    assert english == english_number(n)
+
+
+def test_one_hundred_thousand():
+    assert 'one hundred thousand' == english_number(100000)
+
+
+@pytest.mark.parametrize('n, english',
+    [(200000, 'two hundred thousand'),
+     (300000, 'three hundred thousand'),
+     (400000, 'four hundred thousand'),
+     (500000, 'five hundred thousand'),
+     (600000, 'six hundred thousand'),
+     (700000, 'seven hundred thousand'),
+     (800000, 'eight hundred thousand'),
+     (900000, 'nine hundred thousand'),]
+)
+def test_other_hundred_thousands(n, english):
     assert english == english_number(n)
