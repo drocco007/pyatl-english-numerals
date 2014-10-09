@@ -104,3 +104,17 @@ def test_one_hundred():
 
 def test_one_hundred_one():
     assert 'one hundred one' == english_number(101)
+
+
+@pytest.mark.parametrize('n, english',
+    [(102, 'one hundred two'),
+     (103, 'one hundred three'),
+     (104, 'one hundred four'),
+     (105, 'one hundred five'),
+     (106, 'one hundred six'),
+     (107, 'one hundred seven'),
+     (108, 'one hundred eight'),
+     (109, 'one hundred nine')]
+)
+def test_one_hundred_ones(n, english):
+    assert english == english_number(n)
