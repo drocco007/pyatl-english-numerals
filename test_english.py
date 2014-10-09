@@ -302,3 +302,39 @@ def test_one_hundred_thousand():
 )
 def test_other_hundred_thousands(n, english):
     assert english == english_number(n)
+
+
+def test_one_million():
+    assert 'one million' == english_number(1000000)
+
+
+def test_big_million():
+    assert ('eight hundred sixty-seven million three hundred twenty-four '
+            'thousand eight hundred seventy-six') == english_number(867324876)
+
+
+def test_one_billion():
+    assert 'one billion' == english_number(1000000000)
+
+
+def test_big_billion():
+    assert ('four hundred thirty-five billion seven hundred twenty million '
+            'one hundred one thousand nine hundred forty-three') \
+        == english_number(435720101943)
+
+
+def test_one_trillion():
+    assert 'one trillion' == english_number(1000000000000)
+
+
+def test_big_trillion():
+    assert ('one hundred eleven trillion one hundred ten million one hundred '
+            'one') == english_number(111000110000101)
+
+
+def test_one_quadrillion():
+    assert 'one quadrillion' == english_number(1000000000000000)
+
+
+def test_googol():
+    assert 'two googol' == english_number(2*10**100)

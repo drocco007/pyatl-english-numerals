@@ -7,6 +7,24 @@ tens = ['zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty',
         'seventy', 'eighty', 'ninety']
 
 not_so_wee_numbers = [
+    # This number makes my computer really mad
+    # (10**(10**100), 'googolplex'),
+    (10**100, 'googol'),
+    (1000000000000000000000000000000000000000000000000, 'quindecillion'),
+    (1000000000000000000000000000000000000000000000, 'quattuordecillion'),
+    (1000000000000000000000000000000000000000000, 'tredecillion'),
+    (1000000000000000000000000000000000000000, 'duodecillion'),
+    (1000000000000000000000000000000000000, 'undecillion'),
+    (1000000000000000000000000000000000, 'decillion'),
+    (1000000000000000000000000000000, 'nonillion'),
+    (1000000000000000000000000000, 'octillion'),
+    (1000000000000000000000000, 'septillion'),
+    (1000000000000000000000, 'sextillion'),
+    (1000000000000000000, 'quintillion'),
+    (1000000000000000, 'quadrillion'),
+    (1000000000000, 'trillion'),
+    (1000000000, 'billion'),
+    (1000000, 'million'),
     (1000, 'thousand'),
     (100, 'hundred'),
 ]
