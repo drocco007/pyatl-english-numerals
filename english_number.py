@@ -10,6 +10,9 @@ def english_number(n):
     anything_left = True
     result = []
 
+    if n >= 1000:
+        return 'one thousand'
+
     if n >= 100:
         hundreds = n / 100
         anything_left = n = n % 100
