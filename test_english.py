@@ -118,3 +118,48 @@ def test_one_hundred_one():
 )
 def test_one_hundred_ones(n, english):
     assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(123, 'one hundred twenty-three'),
+     (124, 'one hundred twenty-four'),
+     (125, 'one hundred twenty-five'),
+     (126, 'one hundred twenty-six'),
+     (127, 'one hundred twenty-seven'),
+     (128, 'one hundred twenty-eight'),
+     (129, 'one hundred twenty-nine')]
+)
+def test_one_hundred_twenties(n, english):
+    assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(130, 'one hundred thirty'),
+     (131, 'one hundred thirty-one'),
+     (132, 'one hundred thirty-two'),
+     (133, 'one hundred thirty-three'),
+     (134, 'one hundred thirty-four'),
+     (135, 'one hundred thirty-five'),
+     (136, 'one hundred thirty-six'),
+     (137, 'one hundred thirty-seven'),
+     (138, 'one hundred thirty-eight'),
+     (139, 'one hundred thirty-nine')]
+)
+def test_one_hundred_thirties(n, english):
+    assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(199, 'one hundred ninety-nine'),
+     (193, 'one hundred ninety-three'),
+     (190, 'one hundred ninety'),
+     (182, 'one hundred eighty-two'),
+     (178, 'one hundred seventy-eight'),
+     (175, 'one hundred seventy-five'),
+     (170, 'one hundred seventy'),
+     (165, 'one hundred sixty-five'),
+     (156, 'one hundred fifty-six'),
+     (147, 'one hundred forty-seven'),]
+)
+def test_other_one_hundreds(n, english):
+    assert english == english_number(n)
