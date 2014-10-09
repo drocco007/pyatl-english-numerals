@@ -163,3 +163,41 @@ def test_one_hundred_thirties(n, english):
 )
 def test_other_one_hundreds(n, english):
     assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(200, 'two hundred'),
+     (201, 'two hundred one'),
+     (300, 'three hundred'),
+     (301, 'three hundred one'),
+     (400, 'four hundred'),
+     (401, 'four hundred one'),
+     (500, 'five hundred'),
+     (501, 'five hundred one'),
+     (600, 'six hundred'),
+     (601, 'six hundred one'),
+     (700, 'seven hundred'),
+     (701, 'seven hundred one'),
+     (800, 'eight hundred'),
+     (801, 'eight hundred one'),
+     (900, 'nine hundred'),
+     (901, 'nine hundred one'),]
+)
+def test_other_hundreds_zero_one(n, english):
+    assert english == english_number(n)
+
+
+@pytest.mark.parametrize('n, english',
+    [(999, 'nine hundred ninety-nine'),
+     (893, 'eight hundred ninety-three'),
+     (790, 'seven hundred ninety'),
+     (682, 'six hundred eighty-two'),
+     (678, 'six hundred seventy-eight'),
+     (575, 'five hundred seventy-five'),
+     (470, 'four hundred seventy'),
+     (365, 'three hundred sixty-five'),
+     (256, 'two hundred fifty-six'),
+     (147, 'one hundred forty-seven'),]
+)
+def test_other_hundreds(n, english):
+    assert english == english_number(n)
