@@ -205,3 +205,7 @@ def test_other_hundreds(n, english):
 
 def test_one_thousand():
     assert 'one thousand' == english_number(1000)
+
+
+def test_one_thousand_one():
+    assert 'one thousand one' == english_number(1001)
