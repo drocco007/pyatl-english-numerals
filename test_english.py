@@ -100,3 +100,7 @@ def test_double_digit(n, english):
 
 def test_one_hundred():
     assert 'one hundred' == english_number(100)
+
+
+def test_one_hundred_one():
+    assert 'one hundred one' == english_number(101)

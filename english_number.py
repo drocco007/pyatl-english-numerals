@@ -11,7 +11,11 @@ def english_number(n):
     result = []
 
     if n >= 100:
-        return 'one hundred'
+        anything_left = n = n % 100
+        result.append('one hundred')
+
+        if anything_left:
+            result.append(' ')
 
     if n >= 20:
         place = n / 10
