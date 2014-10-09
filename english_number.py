@@ -71,5 +71,21 @@ def english_number(n):
     return ''.join(result)
 
 
+def main():
+    import sys
+    import random
+
+    # sys.argv[0] is the name of the script
+    args = sys.argv[1:]
+
+    if args:
+        for n in (int(number) for number in args):
+            print english_number(n)
+    else:
+        for size in (100, 100000000000, 100*10**100):
+            n = random.randint(0, size)
+            print '{}: {}\n'.format(n, english_number(n))
+
+
 if __name__ == '__main__':
     main()
