@@ -267,36 +267,6 @@ more complicated…
 
 |----|
 
-the computer
-
-*does what you tell it to*
-
-
-|----|
-
-the computer does
-
-*exactly*
-
-what you tell it to
-
-
-|----|
-
-the computer *only* does
-
-*exactly*
-
-what you tell it to,
-
-
-|----|
-
-**no more, no less!**
-
-
-|----|
-
 iterative development is a *tool*
 
 we use to **manage complexity**
@@ -510,6 +480,20 @@ to me ;)
 
 |----|
 
+knowing how far you
+
+can stretch
+
+
+|----|
+
+knowing how much
+
+stretching is wise
+
+
+|----|
+
 the *art* of programming
 
 
@@ -529,9 +513,9 @@ problem countours
 
 |----|
 
-problem countours
+*direct* mapping between
 
-*direct* mapping between digit and numeral
+digit and numeral
 
 
 |----|
@@ -545,8 +529,6 @@ problem countours
 
 
 |----|
-
-countours and language tools
 
 Python has a *data structure* for that!
 
@@ -656,7 +638,7 @@ continue in same vein…
 
 |----|
 
-but…
+but notice…
 
 
 |----|
@@ -1049,6 +1031,14 @@ substitute ``0`` for ``n``…
 
 |----|
 
+In English,
+
+| “*join an empty list with*
+| *an empty string…*”
+
+
+|----|
+
 *creativity*
 
 
@@ -1112,10 +1102,339 @@ Mine: do we have *anything left*?
 *progress*
 
 
+Double Digits
+=============
+
+
 |----|
+
+pretty much the same as
+
+*twenties*
+
+except we *look up* the tens place
+
+
 |----|
+
+.. code-block:: python
+
+    def english_number(n):
+        anything_left = True
+        result = []
+
+        if n >= 20:
+            place = n / 10
+            anything_left = n = n % 10
+            result.append(tens[place])
+
+            if anything_left:
+                result.append('-')
+
+        if anything_left:
+            result.append(ones_teens[n])
+
+        return ''.join(result)
+
+
 |----|
+
+::
+
+    $ py.test -qx
+    ..................................................
+    50 passed in 0.07 seconds
+
+
 |----|
+
+*progress*
+
+
+|----|
+
+(Tivo™ “bedeep bedeep” noise here.
+
+Hundreds are just like tens,
+
+until we get to…)
+
+
+One Hundred
+===========
+
+.. code-block:: python
+
+    def english_number(n):
+        anything_left = True
+        result = []
+
+        if n >= 100:
+            return 'one hundred'
+
+        if n >= 20:
+        # etc.
+
+
+One Hundred Whatever
+====================
+
+.. code-block:: python
+
+    def english_number(n):
+        anything_left = True
+        result = []
+
+        if n >= 100:
+            anything_left = n = n % 100
+            result.append('one hundred')
+
+            if anything_left:
+                result.append(' ')
+
+        if n >= 20:
+        # etc.
+
+
+
+thousands
+=========
+
+
+|----|
+
+if you were on
+
+*autopilot*
+
+
+|----|
+
+now's the time to
+
+turn it **off**
+
+
+|----|
+
+problem contours
+
+
+|----|
+
+Look at the problem
+
+
+|----|
+
+1000
+
+one thousand
+
+
+|----|
+
+1001
+
+one thousand one
+
+
+|----|
+
+8206
+
+eight thousand two hundred six
+
+
+|----|
+
+16384
+
+sixteen thousand three hundred eighty-four
+
+
+|----|
+
+in other words
+
+
+|----|
+
+split number into
+
+thousands, hundreds, tens
+
+
+|----|
+
+result is
+
+``english_number(thousands) + 'thousand'`` +
+
+``english_number(hundreds) + 'hundred'`` +
+
+``english_number(tens)``
+
+
+|----|
+
+``english_number(thousands)``
+
+becomes
+
+``english_number(16)``
+
+
+|----|
+
+Does anything about this look…
+
+
+|----|
+
+*familiar*
+
+
+|----|
+
+.. code-block:: python
+
+    >>> numerals = [('D', 500), ('C', 100),  # etc.
+    ...             ('L', 50), ('X', 10),
+    ...             ('V', 5), ('I', 1)]
+    >>> def roman(n):
+    ...     parts = []
+    ...     for numeral, decimal in numerals:
+    ...         count = n / decimal
+    ...         parts.append(numeral * count)
+    ...         n %= decimal
+    ...     return ''.join(parts)
+
+
+|----|
+
+replace the numerals…
+
+
+|----|
+
+.. code-block:: python
+
+    not_so_wee_numbers = [
+        # This number makes my computer really mad
+        # (10**(10**100), 'googolplex'),
+        (10**100, 'googol'),
+        # …
+        (1000000000000000000000000000, 'octillion'),
+        (1000000000000000000000000, 'septillion'),
+        (1000000000000000000000, 'sextillion'),
+        (1000000000000000000, 'quintillion'),
+        (1000000000000000, 'quadrillion'),
+        (1000000000000, 'trillion'),
+        (1000000000, 'billion'),
+        (1000000, 'million'),
+        (1000, 'thousand'),
+        (100, 'hundred'),
+    ]
+
+
+|----|
+
+English still more
+
+complicated
+
+than Roman
+
+
+|----|
+
+3 main cases:
+
+ones & teens
+
+double digits
+
+big numbers (>= 100)
+
+
+|----|
+
+big numbers uses *recursion*
+
+to handle the question
+
+“how *many* octillion?”
+
+
+|----|
+
+For learning:
+
+github
+
+
+|----|
+
+For fun: command line
+
+
+|----|
+
+::
+
+    $ python english_number.py [#, #, #, …]
+
+
+|----|
+
+for reference
+
+
+|----|
+
+age of the universe *in nanoseconds*
+
+4.354×10\ :sup:`26`
+
+
+|----|
+
+number of atoms in the known universe
+
+10\ :sup:`82`
+
+
+|----|
+
+::
+
+    $ python english_number.py
+    5352358218037910232050249409994268755976737569
+    6365547821314866015615056550844069481866044289
+    5167702150: fifty-three googol five thousand two
+    hundred thirty-five quindecillion eight hundred
+    twenty-one quattuordecillion eight hundred three
+    tredecillion seven hundred ninety-one duodecillion
+    twenty-three undecillion two hundred five decillion
+    twenty-four nonillion nine hundred forty octillion
+    nine hundred ninety-nine septillion four hundred
+    twenty-six sextillion eight hundred seventy-five
+    quintillion five hundred ninety-seven quadrillion
+    six hundred seventy-three trillion seven hundred
+    fifty-six billion nine hundred sixty-three million
+    six hundred fifty-five thousand four hundred
+    seventy-eight quindecillion two hundred thirteen…
+
+|----|
+
+so the next time you need to write a
+
+*102 digit*
+
+check
+
+
 |----|
 
 Thank you!
