@@ -6,6 +6,8 @@
 | Daniel Rocco
 | *@drocco007*
 
+`Slide deck <http://pyatl.github.io/talks/2014-10_english/>`_
+
 
 Iterative Development and Testing
 ---------------------------------
@@ -15,11 +17,12 @@ Iterative Development and Testing
     efficiently”
 
 
-My October talk was a spiritual successor to September's `Party Like
-it's 500BC <https://github.com/pyatl/talks/tree/master/2014-09/roman>`_.
-This month I emphasized the testing aspect of the development process
-as we explored the creation of a solution from a mere problem statement
-to a complete and well tested implementation.
+`My October talk <http://pyatl.github.io/talks/2014-10_english/>`_ was a
+spiritual successor to September's `Party Like it's 500BC
+<https://github.com/pyatl/talks/tree/master/2014-09/roman>`_. This month
+I emphasized the testing aspect of the development process as we
+explored the creation of a solution from a mere problem statement to a
+complete and well tested implementation.
 
 Problem statement:
 
