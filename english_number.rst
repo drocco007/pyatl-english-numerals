@@ -3,37 +3,37 @@
     <br/>
 
 
-.. |----| raw:: html
-
-    </div><div class="section">
-
-
 .. class:: bigtext
 
 From Rome → |br| ← to England
-===============================
+-------------------------------
 
 @drocco007
 
+`source & instructions <https://github.com/drocco007/pyatl-english-numerals>`_
+
 
 Last Time
-=========
+---------
 
 
-|----|
+slide
+-----
 
 | *iteratively* design and build a
 | *complex* calculation
 
 
-|----|
+slide
+-----
 
 | given a positive integer,
 | return its equivalent representation
 | in *additive* (ca 500BC) Roman numerals
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -49,7 +49,8 @@ Last Time
     ...     return ''.join(parts)
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -64,68 +65,78 @@ Last Time
     XI
 
 
-|----|
+slide
+-----
 
 *problem solving*
 
 
-|----|
+slide
+-----
 
 problem solving
 
 how developers *approach* problems
 
 
-|----|
+slide
+-----
 
 problem solving
 
 how developers *design* solutions
 
 
-|----|
+slide
+-----
 
 problem solving
 
 how developers *implement* software
 
 
-|----|
+slide
+-----
 
 prefer *general solutions*
 
 to **special cases**
 
 
-|----|
+slide
+-----
 
 leverage experience
 
 to *anticipate next move*
 
 
-|----|
+slide
+-----
 
 DRY: pathological abhorrence of **repetition**
 
 
-|----|
+slide
+-----
 
 prefer *readability*
 
 
-|----|
+slide
+-----
 
 *maintainability*
 
 
-|----|
+slide
+-----
 
 *extensibility*
 
 
 The *Art* of Programming
-========================
+------------------------
 
 problem contours, experience, language idiom, tools
 
@@ -139,10 +150,11 @@ A        B
 
 
 This Time
-=========
+---------
 
 
-|----|
+slide
+-----
 
 | given a positive integer,
 | return its equivalent representation
@@ -150,7 +162,7 @@ This Time
 
 
 ?
-=
+-
 
 .. code-block:: python
 
@@ -160,34 +172,39 @@ This Time
     'zero'
 
 
-|----|
+slide
+-----
 
 similar problem to Roman
 
 
-|----|
+slide
+-----
 
 similar problem to Roman,\ |br|
 but *more complicated*
 
 
 Why?
-====
+----
 
 
-|----|
+slide
+-----
 
 Roman numerals are *regular*
 
 
-|----|
+slide
+-----
 
 | one **rule** to rule them all
 |
 |
 
 
-|----|
+slide
+-----
 
 | one **rule** to rule them all
 |
@@ -195,10 +212,10 @@ Roman numerals are *regular*
 
 
 123
-===
+---
 
 123
-===
+---
 
 .. code-block:: python
 
@@ -206,24 +223,25 @@ Roman numerals are *regular*
     'CXXIII'
 
 
-|----|
+slide
+-----
 
 English numerals are *irregular*
 
 
 123
-===
+---
 
 
 
 123
-===
+---
 
 one hundred twenty-three
 
 
 123
-===
+---
 
 *units used throughout*
 
@@ -231,7 +249,7 @@ one hundred twenty-three
 
 
 123
-===
+---
 
 *two different separators*
 
@@ -239,7 +257,7 @@ one\ **␣**\ hundred\ **␣**\ twenty\ **⊟**\ three
 
 
 123
-===
+---
 
 *special names for teens & tens*
 
@@ -247,45 +265,50 @@ one hundred **twenty**-three
 
 
 123
-===
+---
 
 (**not** one hundred *two tens* three)
 
 
 123
-===
+---
 
 explicit *place name* vs. *not*
 
 one **hundred** twenty\ **☼**\ -three **☼**
 
 
-|----|
+slide
+-----
 
 more complicated…
 
 
-|----|
+slide
+-----
 
 iterative development is a *tool*
 
 we use to **manage complexity**
 
 
-|----|
+slide
+-----
 
 iterative development:
 
 start small & simple
 
-|----|
+slide
+-----
 
 iterative development:
 
 start small, refine
 
 
-|----|
+slide
+-----
 
 iterative development:
 
@@ -293,38 +316,43 @@ start small, refine, and test
 
 
 Why tests?
-==========
+----------
 
 
-|----|
+slide
+-----
 
 testing is less about
 
 **correctness**
 
 
-|----|
+slide
+-----
 
 testing is more about
 
 *confidence & creativity*
 
 
-|----|
+slide
+-----
 
 tests help you
 
 *define and measure progress*
 
 
-|----|
+slide
+-----
 
 tests let you
 
 *explore and create*
 
 
-|----|
+slide
+-----
 
 tests give you the
 
@@ -334,9 +362,10 @@ to work quickly and efficiently
 
 
 Where to Begin?
-===============
+---------------
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -346,7 +375,8 @@ Where to Begin?
     'zero'
 
 
-|----|
+slide
+-----
 
 define progress by
 
@@ -355,7 +385,8 @@ define progress by
 for it!
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -363,26 +394,30 @@ for it!
         assert 'one' == english_number(1)
 
 
-|----|
+slide
+-----
 
 progress
 
 
-|----|
+slide
+-----
 
 progress:
 
 handling `1`
 
 
-|----|
+slide
+-----
 
 progress:
 
 handling `1` *without breaking* `0`
 
 
-|----|
+slide
+-----
 
 .. code-block::
 
@@ -403,7 +438,7 @@ handling `1` *without breaking* `0`
 
 
 Nope
-====
+----
 
 .. code-block:: python
 
@@ -417,7 +452,8 @@ Nope
     1 failed in 0.03 seconds
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -434,7 +470,8 @@ Nope
     2 passed in 0.01 seconds
 
 
-|----|
+slide
+-----
 
 you will be
 
@@ -443,24 +480,28 @@ you will be
 to work “faster” than this
 
 
-|----|
+slide
+-----
 
 the *further* you **stretch**
 
 the *more ground* you'll have to
 
 
-|----|
+slide
+-----
 
 **retrace**
 
 
-|----|
+slide
+-----
 
 when something goes wrong
 
 
-|----|
+slide
+-----
 
 and the
 
@@ -469,7 +510,8 @@ and the
 that retracing will be
 
 
-|----|
+slide
+-----
 
 (which doesn't sound
 
@@ -478,47 +520,54 @@ that retracing will be
 to me ;)
 
 
-|----|
+slide
+-----
 
 knowing how far you
 
 can stretch
 
 
-|----|
+slide
+-----
 
 knowing how much
 
 stretching is wise
 
 
-|----|
+slide
+-----
 
 the *art* of programming
 
 
 What's next?
-============
+------------
 
 
-|----|
+slide
+-----
 
 single digits
 
 
-|----|
+slide
+-----
 
 problem countours
 
 
-|----|
+slide
+-----
 
 *direct* mapping between
 
 digit and numeral
 
 
-|----|
+slide
+-----
 
 === ======
  0   zero
@@ -528,17 +577,20 @@ digit and numeral
 === ======
 
 
-|----|
+slide
+-----
 
 Python has a *data structure* for that!
 
 
-|----|
+slide
+-----
 
 **list**
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -548,7 +600,8 @@ Python has a *data structure* for that!
     ...     return ones[n]
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -566,7 +619,8 @@ Python has a *data structure* for that!
     nine
 
 
-|----|
+slide
+-----
 
 ===== ========
  0     zero
@@ -578,7 +632,8 @@ Python has a *data structure* for that!
 ===== ========
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -592,7 +647,8 @@ Python has a *data structure* for that!
     ...     return ones_tens[n]
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -611,17 +667,19 @@ Python has a *data structure* for that!
 
 
 So Much for the Easy Part…
-==========================
+--------------------------
 
 Twenties
-========
+--------
 
-|----|
+slide
+-----
 
 continue in same vein…
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -631,17 +689,20 @@ continue in same vein…
     ...              'twenty-one', 'twenty-two', ]
 
 
-|----|
+slide
+-----
 
 (this is going to end badly…)
 
 
-|----|
+slide
+-----
 
 but notice…
 
 
-|----|
+slide
+-----
 
 result composed of a
 
@@ -650,28 +711,33 @@ result composed of a
 **ones** numeral
 
 
-|----|
+slide
+-----
 
 *twenty*-**three**
 
 
-|----|
+slide
+-----
 
 so, in general,
 
-|----|
+slide
+-----
 
 *tens numeral* + ``'-'`` + **ones numeral**
 
 
-|----|
+slide
+-----
 
 we *already have* a solution
 
 for the ones…
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -679,38 +745,40 @@ for the ones…
     ...     return ones_tens[n]
 
 
-|----|
+slide
+-----
 
 so we *refine*
 
 
 Refine
-======
+------
 
 define progress
 
 
 Refine
-======
+------
 
 define progress, construct solution
 
 
 Progress
-========
+--------
 
 tests for the twenties cases
 
 
 Detour
-======
+------
 
 Python has great tools for
 
 *efficient* testing
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -726,12 +794,14 @@ Python has great tools for
     def test_twenties(n, english):
         assert english == english_number(n)
 
-|----|
+slide
+-----
 
 (uhm…)
 
 
-|----|
+slide
+-----
 
 “Make me a bunch of tests…”
 
@@ -740,7 +810,8 @@ Python has great tools for
     @pytest.mark.parametrize
 
 
-|----|
+slide
+-----
 
 “…each taking an integer ``n`` and an English equivalent ``english``…”
 
@@ -749,7 +820,8 @@ Python has great tools for
     @pytest.mark.parametrize('n, english',
 
 
-|----|
+slide
+-----
 
 | “…each of which checks the
 | *input* ``n`` against the
@@ -761,7 +833,8 @@ Python has great tools for
     def test_twenties(n, english):
         assert english == english_number(n)
 
-|----|
+slide
+-----
 
 “…and here's the data!”
 
@@ -780,7 +853,8 @@ Python has great tools for
         assert english == english_number(n)
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -788,7 +862,8 @@ Python has great tools for
     ...     return ones_tens[n]
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -797,7 +872,8 @@ Python has great tools for
     1 failed, 20 passed in 0.06 seconds
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -808,7 +884,8 @@ Python has great tools for
     ...         return ones_tens[n]
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -829,27 +906,32 @@ Python has great tools for
     1 failed, 21 passed in 0.06 seconds
 
 
-|----|
+slide
+-----
 
 *progress*
 
 
-|----|
+slide
+-----
 
 How do we handle the *ones*?
 
 
-|----|
+slide
+-----
 
 Does anything about this look…
 
 
-|----|
+slide
+-----
 
 *familiar*
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -862,35 +944,40 @@ Does anything about this look…
     ...     return ''.join(parts)
 
 
-|----|
+slide
+-----
 
 We need to
 
 check for a *twenty*
 
 
-|----|
+slide
+-----
 
 We need to
 
 add it to the *result*
 
 
-|----|
+slide
+-----
 
 We need to
 
 *remove* it from ``n``
 
 
-|----|
+slide
+-----
 
 We need to
 
 let the *ones* code do its thing
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -912,12 +999,14 @@ let the *ones* code do its thing
         return ''.join(result)
 
 
-|----|
+slide
+-----
 
 Think it'll work?
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -938,9 +1027,10 @@ Think it'll work?
     1 failed, 20 passed in 0.06 seconds
 
 **Twentyzero??!?!?**
-====================
+--------------------
 
-|----|
+slide
+-----
 
 Hmm. I guess we should not
 
@@ -949,7 +1039,8 @@ handle the ones if there
 aren't any…
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -972,7 +1063,8 @@ aren't any…
         return ''.join(result)
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -992,28 +1084,32 @@ aren't any…
 
 
 AHHHHH!!!
-=========
+---------
 
 
-|----|
+slide
+-----
 
 wuzzgoinon?
 
 
-|----|
+slide
+-----
 
 we *fixed* twenty but *broke* zero…
 
 
 How?
-====
+----
 
-|----|
+slide
+-----
 
 substitute ``0`` for ``n``…
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -1029,7 +1125,8 @@ substitute ``0`` for ``n``…
         return ''.join(result)
 
 
-|----|
+slide
+-----
 
 In English,
 
@@ -1037,12 +1134,14 @@ In English,
 | *an empty string…*”
 
 
-|----|
+slide
+-----
 
 *creativity*
 
 
-|----|
+slide
+-----
 
 There are
 
@@ -1051,12 +1150,14 @@ There are
 approaches
 
 
-|----|
+slide
+-----
 
 Mine: do we have *anything left*?
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -1076,7 +1177,8 @@ Mine: do we have *anything left*?
         return ''.join(result)
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -1097,16 +1199,18 @@ Mine: do we have *anything left*?
     1 failed, 21 passed in 0.06 seconds
 
 
-|----|
+slide
+-----
 
 *progress*
 
 
 Double Digits
-=============
+-------------
 
 
-|----|
+slide
+-----
 
 pretty much the same as
 
@@ -1115,7 +1219,8 @@ pretty much the same as
 except we *look up* the tens place
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -1137,7 +1242,8 @@ except we *look up* the tens place
         return ''.join(result)
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -1146,12 +1252,14 @@ except we *look up* the tens place
     50 passed in 0.07 seconds
 
 
-|----|
+slide
+-----
 
 *progress*
 
 
-|----|
+slide
+-----
 
 (Tivo™ “bedeep bedeep” noise here.
 
@@ -1161,7 +1269,7 @@ until we get to…)
 
 
 One Hundred
-===========
+-----------
 
 .. code-block:: python
 
@@ -1177,7 +1285,7 @@ One Hundred
 
 
 One Hundred Whatever
-====================
+--------------------
 
 .. code-block:: python
 
@@ -1198,74 +1306,85 @@ One Hundred Whatever
 
 
 thousands
-=========
+---------
 
 
-|----|
+slide
+-----
 
 if you were on
 
 *autopilot*
 
 
-|----|
+slide
+-----
 
 now's the time to
 
 turn it **off**
 
 
-|----|
+slide
+-----
 
 problem contours
 
 
-|----|
+slide
+-----
 
 Look at the problem
 
 
-|----|
+slide
+-----
 
 1000
 
 one thousand
 
 
-|----|
+slide
+-----
 
 1001
 
 one thousand one
 
 
-|----|
+slide
+-----
 
 8206
 
 eight thousand two hundred six
 
 
-|----|
+slide
+-----
 
 16384
 
 sixteen thousand three hundred eighty-four
 
 
-|----|
+slide
+-----
 
 in other words
 
 
-|----|
+slide
+-----
 
 split number into
 
 thousands, hundreds, tens
 
 
-|----|
+slide
+-----
 
 result is
 
@@ -1276,7 +1395,8 @@ result is
 ``english_number(tens)``
 
 
-|----|
+slide
+-----
 
 ``english_number(thousands)``
 
@@ -1285,17 +1405,20 @@ becomes
 ``english_number(16)``
 
 
-|----|
+slide
+-----
 
 Does anything about this look…
 
 
-|----|
+slide
+-----
 
 *familiar*
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -1311,12 +1434,14 @@ Does anything about this look…
     ...     return ''.join(parts)
 
 
-|----|
+slide
+-----
 
 replace the numerals…
 
 
-|----|
+slide
+-----
 
 .. code-block:: python
 
@@ -1338,7 +1463,8 @@ replace the numerals…
     ]
 
 
-|----|
+slide
+-----
 
 English still more
 
@@ -1347,7 +1473,8 @@ complicated
 than Roman
 
 
-|----|
+slide
+-----
 
 3 main cases:
 
@@ -1358,7 +1485,8 @@ double digits
 big numbers (>= 100)
 
 
-|----|
+slide
+-----
 
 big numbers uses *recursion*
 
@@ -1367,45 +1495,52 @@ to handle the question
 “how *many* octillion?”
 
 
-|----|
+slide
+-----
 
 For learning:
 
-github
+`github: source & instructions <https://github.com/drocco007/pyatl-english-numerals>`_
 
 
-|----|
+slide
+-----
 
 For fun: command line
 
 
-|----|
+slide
+-----
 
 ::
 
     $ python english_number.py [#, #, #, …]
 
 
-|----|
+slide
+-----
 
 for reference
 
 
-|----|
+slide
+-----
 
 age of the universe *in nanoseconds*
 
 4.354×10\ :sup:`26`
 
 
-|----|
+slide
+-----
 
 number of atoms in the known universe
 
 10\ :sup:`82`
 
 
-|----|
+slide
+-----
 
 ::
 
@@ -1426,7 +1561,8 @@ number of atoms in the known universe
     six hundred fifty-five thousand four hundred
     seventy-eight quindecillion two hundred thirteen…
 
-|----|
+slide
+-----
 
 so the next time you need to write a
 
@@ -1435,12 +1571,14 @@ so the next time you need to write a
 check
 
 
-|----|
+slide
+-----
 
 Thank you!
 
 
-|----|
+slide
+-----
 
 ♥
 
