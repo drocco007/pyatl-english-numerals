@@ -107,7 +107,7 @@ my development process::
 
     git branch
 
-which yields:
+which yields::
 
     master
     busted-refactor
